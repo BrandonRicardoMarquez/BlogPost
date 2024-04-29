@@ -7,6 +7,7 @@
             <input type="email" placeholder="Ingrese email">
             <input type="password" placeholder="Ingrese constraseña">
             <button type="submit" class="btn btn-outline-success"></button>
+            
         </form>
     </div>
 </template>

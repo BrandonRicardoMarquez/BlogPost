@@ -36,12 +36,13 @@ import HelloWorld from './components/HelloWorld.vue'
       <router-link class="ms-2" to="/home">Home</router-link> |
       <router-link class="ms-2" to="/login">Login</router-link> |
       <router-link class="ms-2" to="/register">Register</router-link> |
-      <button class="btn btn-outline-danger ms-2">Logout</button>
+      <button @click="userStore.logoutUser" class="btn btn-outline-danger ms-2">Logout</button>
     </nav>
     <router-view></router-view>
   </div>
 </template>
 
 <script setup>
-
+import { useUserStore } from './stores/user';
+const userStore = useUserStore()
 </script>

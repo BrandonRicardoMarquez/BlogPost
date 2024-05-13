@@ -6,7 +6,7 @@
         <form @submit.prevent="handleSubmit">
             <input type="email" placeholder="Ingrese email" v-model.trim="email">
             <input type="password" placeholder="Ingrese constraseña" v-model.trim="password">
-            <button type="submit" class="btn btn-outline-success">Crear usuario</button>
+            <button type="submit" class="btn btn-outline-success" :disabled="userStore.loadingUser">Crear usuario</button>
             
         </form>
     </div>
@@ -15,10 +15,10 @@
 <script setup>
     import { ref } from 'vue';
     import { useUserStore } from '../stores/user';
-    import {useRouter} from 'vue-router'
+    // import {useRouter} from 'vue-router'
 
     const userStore = useUserStore()
-    const router = useRouter()
+    // const router = useRouter()
     const email = ref('')
     const password = ref('')
     // import { computed } from 'vue';
@@ -32,6 +32,6 @@
         }
         // console.log('procesando formulario')
         await userStore.registerUser(email.value, password.value)
-        router.push('/home')
+        // router.push('/home')
     }
 </script>
